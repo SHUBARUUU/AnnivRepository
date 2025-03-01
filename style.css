@@ -1,0 +1,164 @@
+/* Font Set Up */
+@font-face {
+  src: url(./Fonts/QuickSand_Font/Quicksand-VariableFont_wght.ttf);
+  font-family: Quicksand;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Quicksand;
+}
+/* Body Desgin and Layout */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background: url(./StudioGBG.gif) no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  overflow: hidden;
+}
+/*TODO: Container Design*/
+#blurContainer {
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 95%;
+  height: auto;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  backdrop-filter: blur(10px);
+  box-shadow: #36f165 5px 10px 25px;
+}
+/*TODO: Heading Design  */
+.hDSN {
+  font-size: 20px;
+  font-style: italic;
+}
+
+/*TODO: Paragraph Design  */
+.pDSN {
+  font-size: 22px;
+  font-style: oblique;
+  text-align: center;
+  padding: 50px;
+}
+
+/*TODO: Button Design */
+
+#btnDSN {
+  background: linear-gradient(45deg, #a8e6cf, #a8e6ad);
+  color: rgba(0, 0, 0, 0.644);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 40px;
+  border-radius: 25px;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/*TODO: Hover Effect */
+#btnDSN:hover {
+  background: linear-gradient(45deg, #eeb6ff, #a8e6cf);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(255, 182, 193, 0.6);
+  color: rgb(1, 218, 11);
+}
+
+#btnDSN:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(236, 225, 227, 0.8);
+}
+
+/*TODO: More Cute Animations! */
+.leaf {
+  z-index: -1;
+  position: absolute;
+  top: -50px; /* Start above the screen */
+  font-size: 2rem;
+  color: #6b8e23;
+  animation: fall 10s infinite linear;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(50px) translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Custom delays and durations for each leaf to make them fall at different times */
+.leaf:nth-child(1) {
+  left: 10%;
+  animation-duration: 12s;
+  animation-delay: 0s;
+}
+.leaf:nth-child(2) {
+  left: 15%;
+  animation-duration: 8s;
+  animation-delay: 2s;
+}
+.leaf:nth-child(3) {
+  left: 20%;
+  animation-duration: 10s;
+  animation-delay: 1s;
+}
+.leaf:nth-child(4) {
+  left: 25%;
+  animation-duration: 15s;
+  animation-delay: 3s;
+}
+.leaf:nth-child(5) {
+  left: 30%;
+  animation-duration: 14s;
+  animation-delay: 4s;
+}
+.leaf:nth-child(6) {
+  left: 40%;
+  animation-duration: 10s;
+  animation-delay: 0.5s;
+}
+.leaf:nth-child(7) {
+  left: 45%;
+  animation-duration: 13s;
+  animation-delay: 2s;
+}
+.leaf:nth-child(8) {
+  left: 60%;
+  animation-duration: 16s;
+  animation-delay: 1.5s;
+}
+.leaf:nth-child(9) {
+  left: 75%;
+  animation-duration: 9s;
+  animation-delay: 3.5s;
+}
+.leaf:nth-child(10) {
+  left: 90%;
+  animation-duration: 17s;
+  animation-delay: 4.5s;
+}
+
+/*TODO: Logo Placement  */
+.logos {
+  position: absolute;
+  right: 10%;
+  top: 92%;
+  transform: translate(50%, -50%);
+
+  height: 100px;
+}
