@@ -1,0 +1,22 @@
+/** Font Set Up */
+@font-face {
+  src: url();
+  font-family: Quicksand;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Quicksand;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background: url(./Images&GIFS/StudioGBG_1.gif) no-repeat;
+  background-position: center;
+  background-size: cover;
+}

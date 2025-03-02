@@ -1,4 +1,4 @@
-/* Font Set Up */
+/** Font Set Up */
 @font-face {
   src: url(./Fonts/QuickSand_Font/Quicksand-VariableFont_wght.ttf);
   font-family: Quicksand;
@@ -9,22 +9,46 @@
   box-sizing: border-box;
   font-family: Quicksand;
 }
-/* Body Desgin and Layout */
+/** Body Desgin and Layout */
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 
-  background: url(./StudioGBG.gif) no-repeat;
+  background: url(./Images&GIFS/StudioGBG.gif) no-repeat;
   background-position: center;
   background-size: cover;
 
   overflow: hidden;
 }
-/*TODO: Container Design*/
+/** Walking Totoro Gif Design */
+/*? Before/Above the Content--Container */
+#walkingTotoro {
+  align-self: flex-start;
+  width: 600px;
+  margin: 0px 0px 0px 30px;
+}
+
+#walkingTotoro img {
+  /*TODO: Walk totoro Inside its container */
+  animation: walk 12s infinite linear;
+}
+
+@keyframes walk {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(450px) translateY(0vh);
+  }
+}
+
+/** Container Design*/
 #blurContainer {
-  border: 2px solid black;
+  z-index: 1;
+  border: 3px solid black;
   border-radius: 15px;
   width: 95%;
   height: auto;
@@ -33,24 +57,25 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   box-shadow: #36f165 5px 10px 25px;
 }
-/*TODO: Heading Design  */
+/**: Heading Design  */
 .hDSN {
   font-size: 20px;
   font-style: italic;
 }
 
-/*TODO: Paragraph Design  */
+/** Paragraph Design  */
 .pDSN {
+  font-weight: 450;
   font-size: 22px;
   font-style: oblique;
   text-align: center;
   padding: 50px;
 }
 
-/*TODO: Button Design */
+/** Button Design */
 
 #btnDSN {
   background: linear-gradient(45deg, #a8e6cf, #a8e6ad);
@@ -64,7 +89,7 @@ body {
   cursor: pointer;
 }
 
-/*TODO: Hover Effect */
+/** Hover Effect */
 #btnDSN:hover {
   background: linear-gradient(45deg, #eeb6ff, #a8e6cf);
   transform: scale(1.1);
@@ -77,7 +102,7 @@ body {
   box-shadow: 0 0 10px rgba(236, 225, 227, 0.8);
 }
 
-/*TODO: More Cute Animations! */
+/** More Cute Animations! */
 .leaf {
   z-index: -1;
   position: absolute;
@@ -101,7 +126,7 @@ body {
   }
 }
 
-/* Custom delays and durations for each leaf to make them fall at different times */
+/** Custom delays and durations for each leaf to make them fall at different times */
 .leaf:nth-child(1) {
   left: 10%;
   animation-duration: 12s;
@@ -153,12 +178,49 @@ body {
   animation-delay: 4.5s;
 }
 
-/*TODO: Logo Placement  */
+/** Logo Placement  */
 .logos {
-  position: absolute;
-  right: 10%;
-  top: 92%;
-  transform: translate(50%, -50%);
+  position: fixed; /* Keeps it in place even when scrolling */
+  right: 20px; /* Distance from the right */
+  bottom: 20px; /* Distance from the bottom */
+  display: flex;
+  gap: 10px; /* Adds spacing between the logos */
+  align-items: center;
+  z-index: 10; /* Ensures it stays on top */
+}
 
-  height: 100px;
+/** Ensures images fit well */
+.logos img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+/** Hover effect */
+.logos img:hover {
+  transform: scale(1.2);
+}
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 150, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 150, 0.8);
+  animation: sparkleMove 5s linear infinite;
+}
+
+@keyframes sparkleMove {
+  0% {
+    transform: scale(0) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.5) translateY(-50px);
+    opacity: 0;
+  }
 }
