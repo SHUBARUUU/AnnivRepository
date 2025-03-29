@@ -30,19 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   typeText(); // Start the typing animation
 
-  // 4️Improve Falling Leaves Animation (Add Random Rotation & Speed)
-  const leaves = document.querySelectorAll(".leaf");
-
-  leaves.forEach((leaf) => {
-    const randomDelay = Math.random() * 5; // Random delay (0s - 5s)
-    const randomDuration = 8 + Math.random() * 10; // Random duration (8s - 18s)
-    const randomRotation = Math.random() * 360; // Random starting rotation
-
-    leaf.style.animation = `fall ${randomDuration}s infinite linear ${randomDelay}s`;
-    leaf.style.transform = `rotate(${randomRotation}deg)`;
-  });
-
-  // 5️⃣ Floating Sparkles Effect
+  // Floating Sparkles Effect
   function createSparkle() {
     const sparkle = document.createElement("div");
     sparkle.classList.add("sparkle");

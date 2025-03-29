@@ -102,105 +102,6 @@ body {
   box-shadow: 0 0 10px rgba(236, 225, 227, 0.8);
 }
 
-/** More Cute Animations! */
-.leaf {
-  z-index: -1;
-  position: absolute;
-  top: -50px; /* Start above the screen */
-  font-size: 2rem;
-  color: #6b8e23;
-  animation: fall 10s infinite linear;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateX(0) translateY(0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(50px) translateY(100vh);
-    opacity: 0;
-  }
-}
-
-/** Custom delays and durations for each leaf to make them fall at different times */
-.leaf:nth-child(1) {
-  left: 10%;
-  animation-duration: 12s;
-  animation-delay: 0s;
-}
-.leaf:nth-child(2) {
-  left: 15%;
-  animation-duration: 8s;
-  animation-delay: 2s;
-}
-.leaf:nth-child(3) {
-  left: 20%;
-  animation-duration: 10s;
-  animation-delay: 1s;
-}
-.leaf:nth-child(4) {
-  left: 25%;
-  animation-duration: 15s;
-  animation-delay: 3s;
-}
-.leaf:nth-child(5) {
-  left: 30%;
-  animation-duration: 14s;
-  animation-delay: 4s;
-}
-.leaf:nth-child(6) {
-  left: 40%;
-  animation-duration: 10s;
-  animation-delay: 0.5s;
-}
-.leaf:nth-child(7) {
-  left: 45%;
-  animation-duration: 13s;
-  animation-delay: 2s;
-}
-.leaf:nth-child(8) {
-  left: 60%;
-  animation-duration: 16s;
-  animation-delay: 1.5s;
-}
-.leaf:nth-child(9) {
-  left: 75%;
-  animation-duration: 9s;
-  animation-delay: 3.5s;
-}
-.leaf:nth-child(10) {
-  left: 90%;
-  animation-duration: 17s;
-  animation-delay: 4.5s;
-}
-
-/** Logo Placement  */
-.logos {
-  position: fixed; /* Keeps it in place even when scrolling */
-  right: 20px; /* Distance from the right */
-  bottom: 20px; /* Distance from the bottom */
-  display: flex;
-  gap: 10px; /* Adds spacing between the logos */
-  align-items: center;
-  z-index: 10; /* Ensures it stays on top */
-}
-
-/** Ensures images fit well */
-.logos img {
-  width: 120px;
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease-in-out;
-}
-
-/** Hover effect */
-.logos img:hover {
-  transform: scale(1.2);
-}
 .sparkle {
   position: absolute;
   width: 10px;
@@ -222,5 +123,50 @@ body {
   100% {
     transform: scale(1.5) translateY(-50px);
     opacity: 0;
+  }
+}
+/** Responsive Styles for 360x800 */
+@media (max-width: 782px) {
+  body {
+    overflow: hidden; /* Prevents horizontal scrolling */
+  }
+
+  #walkingTotoro {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #walkingTotoro img {
+    width: auto;
+    animation: walk 8s infinite linear; /* Adjust walking speed */
+  }
+
+  @keyframes walk {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(160px); /* Adjusted for smaller screens */
+    }
+  }
+
+  #blurContainer {
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hDSN {
+    font-size: 18px;
+  }
+
+  .pDSN {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  #btnDSN {
+    font-size: 16px;
+    padding: 10px 30px;
   }
 }
