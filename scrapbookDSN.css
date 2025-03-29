@@ -217,6 +217,40 @@ body {
   position: relative;
   transform: rotate(350deg);
 }
+/** Button Style for Final Page Link */
+#playlistBTN {
+  background: linear-gradient(
+    45deg,
+    #a8e6cf,
+    #a8e6ad
+  ); /* Adjusted green tones */
+  color: rgba(0, 0, 0, 0.644);
+  font-size: 20px;
+  font-weight: bold;
+  padding: 15px 40px;
+  border-radius: 25px;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 1rem;
+}
+
+/** Hover Effect */
+#playlistBTN:hover {
+  background: linear-gradient(
+    45deg,
+    #b2f0b8,
+    #a8e6cf
+  ); /* Soft Ghibli greens on hover */
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(144, 238, 144, 0.6); /* Light green box shadow */
+  color: rgb(34, 139, 34); /* Darker green text on hover */
+}
+
+#playlistBTN:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(144, 238, 144, 0.8); /* Green glow for focus */
+}
 
 /** Personalized Scroll-Bar For Desktop  */
 ::-webkit-scrollbar {

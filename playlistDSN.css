@@ -1,0 +1,157 @@
+/** Font Set Up */
+@font-face {
+  src: url(./Fonts/Ghibli_Font/Eyad\ Al-Samman\ -\ Ghibli.otf);
+  font-family: Ghibli;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Ghibli;
+}
+
+body {
+  background: url(Images&GIFS/StudioGBG_2.gif) no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(Images&GIFS/StudioGBG_2.gif) no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(5px); /* Apply blur to background image */
+  z-index: -1; /* Ensure it stays in the background */
+}
+
+.contain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #ff6f61;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.heartfelt-message {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeInMessage 3s ease forwards;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#finalMsg {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.image-container {
+  border: 5px solid #ff6f61;
+}
+
+@keyframes fadeInMessage {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Media Queries for Smaller Screens (for 392x782 view) */
+@media (max-width: 782px) {
+  h1 {
+    font-size: 4rem; /* Adjust header text size to be more powerful on small screens */
+  }
+
+  .heartfelt-message {
+    font-size: 0.8rem; /* Larger text on small screens */
+    max-width: 100%; /* Increase width to prevent line breaks */
+  }
+
+  p {
+    font-size: 1rem; /* Slightly larger footer text on smaller screens */
+  }
+}
+
+/* Audio Player Styling */
+.audio-player {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  z-index: 10; /* Ensure it stays above other elements */
+}
+
+audio {
+  width: 200px; /* Adjust the width to suit the size of the player */
+  height: auto;
+  border-radius: 5px;
+}
+/* Container for the image and gif */
+.image-container {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide any content that exceeds container bounds */
+}
+
+.large-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover; /* Ensures the image scales responsively while maintaining aspect ratio */
+}
+
+.gif {
+  position: absolute; /* Makes the gif appear on top of the image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers gif perfectly */
+  width: 200px; /* Adjust size of gif */
+  height: auto;
+  pointer-events: none; /* Prevents the gif from blocking interaction with the image */
+}
+
+/* Media queries for responsiveness */
+
+/* For smaller screens (like mobile devices) */
+@media (max-width: 392px) {
+  .image-container {
+    height: 20vh; /* Make the container shorter for mobile */
+    width: auto;
+  }
+
+  .large-image {
+    object-fit: contain; /* Keep the image contained within the screen for small devices */
+  }
+
+  .gif {
+    width: 150px; /* Resize the gif for mobile */
+  }
+}
